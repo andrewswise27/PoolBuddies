@@ -4,10 +4,13 @@ import Navbar from './components/Navbar';
 import Swap from './pages/Swap';
 import Pools from './pages/Pools';
 import Nft from './pages/Nft';
+import Token from './pages/token';
 import { useEffect, useState } from 'react';
 import Web3 from 'web3'
 import Home from './pages/Home';
 import CryptoTicker from './components/CryptoTicker';
+import Footer from './components/Footer'
+
 
 function App() {
 
@@ -19,7 +22,8 @@ function App() {
       .then(res => res.json())
       .then(data => {
         const spliced = data.tokens.splice(0, 264)
-        setTokens(spliced)})
+        setTokens(spliced)
+      })
   })
 
   const [userObj, setUserObj] = useState({
@@ -104,7 +108,9 @@ function App() {
         <Route path="/swap" element={<Swap tokens={tokens} user={userObj} />} />
         <Route path="/pools" element={<Pools userObj={userObj} web3={web3} />} />
         <Route path="/nft" element={<Nft />} />
+        <Route path="/token" element={<Token />} />
       </Routes>
+      <Footer/>
     </>
   );
 }

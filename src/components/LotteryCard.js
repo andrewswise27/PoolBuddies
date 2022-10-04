@@ -40,10 +40,10 @@ const LotteryCard = ({ contract, cardDetails, maxPlayers, userObj, priceInEther,
                 <div style={{ zIndex: '100' }} className="lotto-card">
 
                     <div style={{ width: '100%', display: 'flex', alignContent: 'center', justifyContent: 'flex-end' }}>
-                        {cardDetails.ownerAddress == userObj.address && userObj.address ? <button onClick={pickWinner}>x</button> : ''}
+                        {cardDetails.ownerAddress == userObj.address && userObj.address && cardDetails.players == maxPlayers ? <button onClick={pickWinner} style={{ posistion: 'absolute' }}>pick winner</button> : ''}
                     </div>
 
-                    <h1>{cardDetails.players} / {maxPlayers}</h1>
+                    <h1>{cardDetails.players} / {maxPlayers} players</h1>
                     <h2>Prize pot</h2>
                     <Button variant="contained" style={{ background: '#7962ea' }} onClick={enterLottery} disabled={cardDetails.poolFull}>BUY TICKET</Button>
                     <h2>{cardDetails.poolFull}</h2>

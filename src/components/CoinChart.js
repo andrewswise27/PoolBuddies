@@ -20,8 +20,8 @@ const CoinChart = ({chartData, tokenFrom}) => {
             spacing: [20, 50, 30, 50],
             height: 500,
             width: 800,
-            borderRadius: 40,
-            backgroundColor: '#FAF3DD',
+            borderRadius: 25,
+            backgroundColor: '#c5a7ec',
         },
         scrollbar: {
             enabled: false
@@ -38,9 +38,9 @@ const CoinChart = ({chartData, tokenFrom}) => {
         },
         // plotOptions: undefined,
         series: [
-        {
+        {   color: '#f8f599',
             data: chartData,
-            name: `${tokenFrom} ($)`,
+            name: `${tokenFrom} ($)`
 
         }
         ]
@@ -57,12 +57,13 @@ const CoinChart = ({chartData, tokenFrom}) => {
 }
 
 const Wrapper = styled.div`
-    position: absolute;
-    box-shadow: 0 0 16px grey;
-    background-color: #f5f0da;
-    right: 38%;
-    top: 22%;
-    border-radius: 4rem;
+ margin-left: 60px;
+ margin-top: 40px;
+ border-radius: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
 `
 
 export default CoinChart;
